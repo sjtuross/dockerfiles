@@ -5,6 +5,8 @@
 @ini_set('output_handler', '');
 // Headers
 header('HTTP/1.1 200 OK');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
 // Download follows...
 header('Content-Description: File Transfer');
 header('Content-Type: application/octet-stream');
