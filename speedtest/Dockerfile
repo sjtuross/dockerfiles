@@ -3,7 +3,7 @@ MAINTAINER FAN VINGA<fanalcest@gmail.com>
 
 COPY . /app/
 WORKDIR /app
-EXPOSE 80
+EXPOSE 8086
 
 RUN apk --no-cache add php7		 \
 		       php7-fpm 	 \
