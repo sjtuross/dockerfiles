@@ -22,4 +22,6 @@ RUN chmod +x /entrypoint.sh
 
 WORKDIR /smartdns
 
+EXPOSE 53
+
 ENTRYPOINT ["/entrypoint.sh"]

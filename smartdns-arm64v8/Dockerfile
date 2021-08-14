@@ -1,4 +1,4 @@
-FROM arm64v8/debian:stretch-slim
+FROM arm64v8/debian:buster-slim
 
 WORKDIR /home
 
@@ -15,5 +15,7 @@ ADD smartdns.conf /home/config/smartdns.conf
 ADD start.sh /home/start.sh
 
 RUN chmod +x start.sh
+
+EXPOSE 53
 
 CMD ["/home/start.sh"]
