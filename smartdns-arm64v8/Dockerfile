@@ -2,7 +2,7 @@ FROM arm64v8/debian:buster-slim
 
 WORKDIR /home
 
-ARG VERSION=Release34
+ARG VERSION=Release35
 
 RUN apt-get update \
     && apt-get install wget -y \
