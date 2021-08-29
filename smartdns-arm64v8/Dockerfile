@@ -7,8 +7,8 @@ ARG VERSION=Release35
 RUN apt-get update \
     && apt-get install wget -y \
     && cd /home \
-    && wget --no-check-certificate https://github.com/pymumu/smartdns/releases/download/${VERSION}/smartdns-arm \
-    && chmod +x smartdns-arm \
+    && wget --no-check-certificate https://github.com/pymumu/smartdns/releases/download/${VERSION}/smartdns-aarch64 \
+    && chmod +x smartdns-aarch64 \
     && mkdir config
 
 ADD smartdns.conf /home/config/smartdns.conf

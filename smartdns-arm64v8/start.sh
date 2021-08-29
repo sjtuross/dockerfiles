@@ -1,2 +1,2 @@
 #!/bin/sh
-/home/smartdns-arm -f -x -c /home/config/smartdns.conf
+/home/smartdns-aarch64 -f -x -c /home/config/smartdns.conf
