@@ -1,7 +1,7 @@
 FROM fedora:latest
 
 RUN dnf -y update && \
-	dnf -y install dnf-plugins-core ethtool geoipupdate iproute && \
+	dnf -y install dnf-plugins-core ethtool geoipupdate iproute procps-ng && \
 	dnf -y copr enable dlk/rpms && \
 	dnf -y install ntopng && \
 	dnf -y clean all
