@@ -1,13 +1,14 @@
 FROM caddy:builder-alpine AS builder
 
 RUN xcaddy build \
+    --with github.com/abiosoft/caddy-json-schema \
     --with github.com/mholt/caddy-l4 \
-    --with github.com/mholt/caddy-dynamicdns \
     --with github.com/caddy-dns/alidns \
     --with github.com/caddy-dns/cloudflare \
     --with github.com/caddy-dns/dnspod \
     --with clevergo.tech/caddy-dnspodcn \
     --with github.com/caddy-dns/duckdns \
+    --with github.com/mholt/caddy-dynamicdns \
     --with github.com/mastercactapus/caddy2-proxyprotocol \
     --with github.com/caddyserver/forwardproxy@caddy2=github.com/sagernet/forwardproxy@latest \
     --with github.com/imgk/caddy-trojan \
