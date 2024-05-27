@@ -1,6 +1,6 @@
 FROM eclipse-temurin:17-jdk-jammy
 
-ARG VERSION=4.9.8
+ARG VERSION=5.0.1
 
 WORKDIR /app
 
