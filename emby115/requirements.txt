@@ -1,0 +1,5 @@
+requests-toolbelt
+pycryptodome
+ecdsa
+Flask
+lz4
