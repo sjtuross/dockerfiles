@@ -18,6 +18,7 @@ from flask import Flask, request, jsonify, redirect, abort
 import requests
 import json
 from urllib.parse import urlparse, urlunparse, urljoin, quote, unquote
+from datetime import datetime
 
 cookie_path = "115-cookie.txt"
 cookie = open(cookie_path).read()
@@ -324,9 +325,10 @@ def index(path=''):
     user_agent = request.headers.get('User-Agent')
     parsed_url = urlparse(current_url)
     path = unquote(parsed_url.path)
+    print(datetime.now(), "mapped path:", path)
     try:
         download_url = get_115url(path,cookie,user_agent)
-        print(download_url)
+        print(datetime.now(), "redirect to:", download_url)
         if download_url:
             return redirect(download_url, code=302)
         else:

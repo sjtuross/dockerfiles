@@ -3,3 +3,4 @@ pycryptodome
 ecdsa
 Flask
 lz4
+gunicorn
