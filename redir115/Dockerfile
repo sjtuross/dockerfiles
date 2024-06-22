@@ -9,4 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 EXPOSE 5302
 
+ENV PYTHONUNBUFFERED=1
+
 CMD [ "gunicorn", "-w", "4", "-b", "0.0.0.0:5302", "redir115:app" ]
