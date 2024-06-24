@@ -19,6 +19,7 @@ import requests
 import json
 from urllib.parse import urlparse, urlunparse, urljoin, quote
 import configparser
+from datetime import datetime
 
 config_file_path = "config.ini"
 config = configparser.ConfigParser()
@@ -354,14 +355,16 @@ def index(path=''):
                     if i['Path'].startswith(key):
                         modified_path = i['Path'][len(key.strip('/'))+1:]
                         modified_path = value+modified_path
-                        Download_url = get_115url(modified_path,cookie,user_agent)
-                        if Download_url:
-                            return redirect(Download_url, code=302)
+                        print(datetime.now(), "mapped path:", modified_path)
+                        download_url = get_115url(modified_path,cookie,user_agent)
+                        if download_url:
+                            print(datetime.now(), "redirect to:", download_url)
+                            return redirect(download_url, code=302)
                         else:
-                            print("Failed to retrieve File ID.")
-                            return (404)
-                        break
+                            print(datetime.now(), "Failed to retrieve File ID.")
+                            break
         url = urlunparse((urlparse(emby_www).scheme, urlparse(emby_www).netloc, parsed_url.path, parsed_url.params, parsed_url.query, parsed_url.fragment))
+        print(datetime.now(),"redirect to:", url)
         return redirect(url+'&realplay=true', code=302)
 
 if __name__ == '__main__':
