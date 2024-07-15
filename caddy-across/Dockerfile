@@ -13,4 +13,6 @@ RUN xcaddy build \
 
 FROM caddy:alpine
 
+RUN apk add --no-cache openssl
+
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
