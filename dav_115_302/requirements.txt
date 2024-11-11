@@ -1,7 +1,10 @@
 cachetools
 flask
 Flask-Compress
+httpagentparser
+orjson
 path_predicate
+pysubs2
 python-115
 python_encode_uri
 urllib3_request
